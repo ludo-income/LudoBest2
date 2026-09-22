@@ -9,9 +9,17 @@ services:
         value: production
       - key: JWT_SECRET
         sync: false
-      - key: GMAIL_USER
+      - key: DATABASE_URL
         sync: false
-      - key: GMAIL_APP_PASSWORD
+      - key: BREVO_API_KEY
+        sync: false
+      - key: BREVO_SENDER_EMAIL
+        sync: false
+      - key: BREVO_SENDER_NAME
+        value: Ludo Best 2
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD_HASH
         sync: false
       - key: OTP_EXPIRES_MINUTES
         value: "10"

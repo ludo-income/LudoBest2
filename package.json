@@ -1,18 +1,17 @@
 {
   "name": "ludobest2",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Ludo Best 2 with real Gmail OTP authentication",
+  "description": "Ludo Best 2 - Brevo Gmail OTP authentication and admin foundation",
   "main": "server/server.js",
-  "scripts": {"start":"node server/server.js"},
-  "engines": {"node":">=18"},
+  "scripts": {"start": "node server/server.js"},
+  "engines": {"node": ">=18"},
   "dependencies": {
-    "bcryptjs":"^2.4.3",
-    "better-sqlite3":"^11.3.0",
-    "dotenv":"^16.4.5",
-    "express":"^4.21.1",
-    "express-rate-limit":"^7.4.1",
-    "jsonwebtoken":"^9.0.2",
-    "nodemailer":"^6.9.15"
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1"
   }
 }
