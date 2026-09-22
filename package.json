@@ -4,8 +4,12 @@
   "private": true,
   "description": "Ludo Best 2 - Brevo Gmail OTP authentication and admin foundation",
   "main": "server/server.js",
-  "scripts": {"start": "node server/server.js"},
-  "engines": {"node": ">=18"},
+  "scripts": {
+    "start": "node ./server/server.js"
+  },
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",

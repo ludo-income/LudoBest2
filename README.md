@@ -1,23 +1,33 @@
-# Ludo Best 2 — Brevo Gmail OTP + Admin Foundation
+# Ludo Best 2 — Render/Brevo fixed build
 
-This version removes the Download App button/section and provides:
-- Sign Up with name + Bangladesh mobile + Gmail
-- Real OTP delivery to the user's Gmail address through Brevo Transactional Email API
-- Gmail OTP verification before account activation
-- Login with Gmail + a fresh Gmail OTP
-- OTP expiry, hashed OTP storage, attempt limits and resend rate limiting
-- PostgreSQL-ready persistent database for Render
-- JWT sessions
-- Admin login and mobile-friendly admin dashboard
-- User list and active/blocked control
-- Payment-method management foundation (name, account number, image URL, instructions, enable/disable)
+This archive is intentionally **flat**: `package.json`, `server/`, and `public/` are at the repository root.
 
-## Render setup
-1. Create a Render PostgreSQL database.
-2. Create the Web Service from this ZIP/repository.
-3. Add the Environment Variables from `.env.example`.
-4. In Brevo, create/verify the sender email and create a transactional API key.
-5. Generate an admin bcrypt hash and set it as `ADMIN_PASSWORD_HASH`.
-6. Deploy. `/` is the user site and `/admin` is the admin panel.
+## Render
+- Runtime: Node
+- Build Command: `npm install`
+- Start Command: `node ./server/server.js`
+- Node: 20.x (via package.json/.nvmrc)
 
-The project intentionally does not use `better-sqlite3`, so Render's Node 26 build does not need a native SQLite compilation step.
+## Required environment variables
+- `DATABASE_URL`
+- `BREVO_API_KEY`
+- `BREVO_SENDER_EMAIL`
+- `BREVO_SENDER_NAME` (optional)
+- `JWT_SECRET`
+- `ADMIN_EMAIL`
+- `ADMIN_PASSWORD_HASH`
+- `OTP_EXPIRES_MINUTES` (optional, default 10)
+
+## Important
+Do not upload the outer ZIP directory name as an extra project root. Put the **contents of this ZIP directly in the GitHub repository root**. The deployed repository must contain:
+
+```
+package.json
+server/server.js
+public/index.html
+public/admin.html
+render.yaml
+```
+
+Health check: `/health`
+Admin panel: `/admin`
